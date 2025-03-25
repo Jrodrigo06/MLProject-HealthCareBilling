@@ -40,6 +40,7 @@ To improve the performance of the machine learning models, **GridSearchCV** was 
 
 - **Flask**: Web framework for building the application and handling user requests.
 - **Python**: The primary language used for data processing, machine learning, and web development.
+- **Pandas and Numpy**: Used for Eda and for data analysis
 - **Scikit-learn**: For preprocessing, model evaluation, and hyperparameter tuning with GridSearchCV.
 - **CatBoost**: Used as one of the models for making predictions.
 - **AdaBoost, GradientBoosting, Random Forest, Decision Tree, Linear Regression**: Other machine learning models included in the system.
