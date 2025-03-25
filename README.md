@@ -22,7 +22,7 @@ The web application is built using **Flask**, and the system includes a range of
 - **AdaBoost Regressor**
 
 ### **Feature Engineering**
-- **BMI * Smoker Binary Feature**: One of the key feature engineering steps in the project was to create an interaction term by multiplying BMI with the smoker status (`smoker_binary`). This is because smoking status and BMI may have a combined effect on healthcare charges.
+- **BMI * Smoker Binary Feature**: One of the key feature engineering steps in the project was to create an interaction term by multiplying BMI with the smoker status (`smoker_binary`). This is because smoking status and BMI seem to have a combined effect on healthcare charges while just bmi didn't.
 - **Removed Irrelevant Features**: Features that showed little to no correlation with healthcare charges were removed to simplify the model and improve performance. These features were identified through exploratory data analysis (EDA) and correlation checks.
 
 ### **Hyperparameter Tuning**
@@ -53,3 +53,19 @@ Clone the repository to your local machine using the following command:
 
 ```bash
 git clone https://github.com/your-username/HealthCareChargesPrediction.git
+
+## Mac
+python3 -m venv venv
+source venv/bin/activate
+
+## Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+##Bash/cmd
+pip install -r requirements.txt
+
+##Run the app
+python app.py
+
+
