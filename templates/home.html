@@ -68,7 +68,11 @@
         </div>
     </form>
     <h2>
-        Your predicted charge is ${{ "%.2f"|format(results) }}
+        {% if results is not none %}
+            Your predicted charge is ${{ "%.2f"|format(results) }}
+        {% else %}
+            Enter details and submit to see the predicted charge.
+        {% endif %}
     </h2>
    <body>
 </html>
