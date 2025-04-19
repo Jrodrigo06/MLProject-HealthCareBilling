@@ -10,11 +10,11 @@ from sklearn.ensemble import (
 )
 
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
+from sklearn.metrics import r2_score, mean_absolute_error
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
-
+from sklearn.dummy import DummyRegressor
 from src.exception import customException
 from src.logger import logging
 
@@ -109,11 +109,18 @@ class ModelTrainer:
             )
 
             predicted=best_model.predict(X_test)
+            
 
+            ##METRICS FOR THE MODEL
+            mae = mean_absolute_error(y_test, predicted)
+            dummy = DummyRegressor(strategy="mean")  # Always predicts the mean bill
+            dummy.fit(X_train, y_train)
+            baseline_preds = dummy.predict(X_test)
+            baseline_mae = mean_absolute_error(y_test, baseline_preds)  
             logging.info(f"Best found model on both training and testing dataset: {best_model_name}")
             
             r2_square = r2_score(y_test, predicted)
-            return f"Best Model: {best_model_name}, R² Score: {r2_square:.4f}"
+            return f"Best Model: {best_model_name}, R² Score: {r2_square:.4f}, Mean Absolute Error: {mae}, Baseline MAE: {baseline_mae}" 
 
         except Exception as e:
             raise customException(e, sys)
