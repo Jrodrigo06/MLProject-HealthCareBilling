@@ -2,7 +2,7 @@ import sys
 import pandas as pd
 from src.exception import customException
 from src.utils import load_object
-
+import logging
 class PredictPipeline:
     def __init__(self):
         pass
@@ -18,6 +18,7 @@ class PredictPipeline:
             return preds
         
         except Exception as e:
+            logging.info("predict didnt work")
             raise customException(e, sys)
 
 class CustomData:
