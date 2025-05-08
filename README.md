@@ -26,7 +26,7 @@ The web application is built using **Flask**, and the system includes a range of
 - **Removed Irrelevant Features**: Features that showed little to no correlation with healthcare charges were removed to simplify the model and improve performance. These features were identified through exploratory data analysis (EDA) and correlation checks.
 
 ### **Hyperparameter Tuning**
-To improve the performance of the machine learning models, **GridSearchCV** was used for hyperparameter tuning. GridSearchCV performs an exhaustive search over a specified parameter grid to find the best combination of hyperparameters for each model. This process ensures that the models are optimized for better predictions.
+To improve the performance of the machine learning models, **GridSearchCV** was used for hyperparameter tuning. GridSearchCV iterates over different parameter combinations and uses cross-validation. This process ensures that the models are optimized for better predictions.
 
 ## **Key Features**
 
